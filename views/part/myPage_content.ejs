@@ -1,0 +1,24 @@
+<section class="page-section" id="myPage_content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="bs-example">
+                <h2 class="text-white mt-0">즐겨찾기 등록</h2>
+                <hr class="divider light my-4">
+            </div>
+
+        </div>
+        <form action="/form_receiver" method="post">
+            <div class="form-group">
+                <label for="inputName">정류장 이름</label>
+                <input type="text" class="form-control" id="tName" name="tName" placeholder="정류장 이름" required>
+            </div>
+            <div class="form-group">
+                <label for="inputBusid">정류장 ID</label>
+                <input type="text" class="form-control" id="tId" name="tId" placeholder="정류장 ID" required>
+            </div>
+            <br>
+            <button type="reset" class="btn btn-primary" style="width:49%">Reset</button>
+            <button type="submit" class="btn btn-primary" style="width:49%">Sign up</button>
+        </form>
+    </div>
+</section>

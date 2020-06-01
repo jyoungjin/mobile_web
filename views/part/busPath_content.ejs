@@ -1,0 +1,26 @@
+<script>
+    window.onload = function() {
+        
+        let x = $('#startLat').val();
+        let y = $('#startLon').val();
+        console.log(x, y)
+        $('#result_btn').attr('href', `/busPath?x=${x}&y=${y}`);
+    }
+
+</script>
+
+<section class="page-section" id="busPath_content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <h2 class="text-white mt-0">정류장 정보</h2>
+                <hr class="divider light my-4">
+                <div>
+                    <p id="startLat" value="" hidden></p>
+                    <p id="startLon" value="" hidden></p>
+                </div>
+                <a class="btn btn-primary" id="result_btn" href='/result'>주변 정류소 조회</a>
+            </div>
+        </div>
+    </div>
+</section>

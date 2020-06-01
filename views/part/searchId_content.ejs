@@ -1,0 +1,41 @@
+<section class="page-section bg-secondary" id="searchId_content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-white mt-0">정류장 ID조회</h2>
+                <hr class="divider light my-4">
+                <form action="/searchId" method="get">
+                    <input type="text" value="<%=stationId%>" name="stationId" placeholder="정류장 ID" required> <br><br>
+
+                    <button type="submit" class="btn btn-primary">입력</button>
+                </form>
+                <br>
+                <!-- 정류장 이름 -->
+                <p id="test" class="col-lg-12 text-white align-self-baseline">
+                    <%= stationName %>
+                </p>
+                <hr class="divider light my-4">
+
+                <!-- 버스 도착 정보 -->
+                <% arrival.index.forEach(function(i, idx){ %>
+                <div class="card text-center col-sm-4" style="float: left;">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=route.routeName[i]%>번</h5>
+                        <hr class="divider dark my-4">
+                        <p class="card-text"><%=arrival.locationNo1[idx] %> 정류장 전</p>
+                        <p class="card-text"><%=arrival.predictTime1[idx]%> 분 남음</p>
+                        <% if (arrival.locationNo2[idx]){ %>
+                        <p class="card-text"><%=arrival.locationNo2[idx] %> 정류장 전</p>
+                        <p class="card-text"><%=arrival.predictTime2[idx]%> 분 남음</p>
+                        <% } else {%>
+                        <p class="card-text">---</p>
+                        <p class="card-text">---</p>
+
+                        <%}%>
+                        </div>
+                    </div>
+                    <%})%>
+                    </div>
+                </div>
+            </div>
+</section>
